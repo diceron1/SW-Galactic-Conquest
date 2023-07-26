@@ -15,7 +15,7 @@ Pilot::Pilot(const sf::Texture& xWingTexture, const sf::RenderWindow& window) : 
 
     const sf::Vector2u windowSize = window.getSize();
     xWingSprite.setPosition(windowSize.x / 2.0f, windowSize.y / 2.0f);  //Move player to center screen
-    xWingSprite.setScale(0.15f, 0.15f);   //Resize to half size (0.5f)
+    xWingSprite.setScale(0.1f, 0.1f);   //Resize to half size (0.5f)
 
     currentPosition = sf::Vector2f(0.f, 0.f);  //Reset center screen to 0,0
     prevPosition = currentPosition;
@@ -115,11 +115,11 @@ sf::Vector2f Pilot::getVelocity() const
 
 void Pilot::fireProjectiles() {
     sf::Vector2f leftFirePosition = xWingSprite.getPosition();
-    leftFirePosition.x += 53.0f; // Adjust the position as per your sprite's dimensions
+    leftFirePosition.x += 35.0f; // Adjust the position as per your sprite's dimensions
     leftFirePosition.y += -7.0f;
 
     sf::Vector2f rightFirePosition = xWingSprite.getPosition();
-    rightFirePosition.x += -59.0f; // Adjust the position as per your sprite's dimensions
+    rightFirePosition.x += -40.0f; // Adjust the position as per your sprite's dimensions
     rightFirePosition.y += -7.0f;
     
     projectiles.push_back(std::make_unique<Projectile>(leftFirePosition, -projectileSpeed)); // Left projectile
